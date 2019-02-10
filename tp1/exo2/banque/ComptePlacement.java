@@ -17,8 +17,9 @@ public class ComptePlacement extends CompteRemunere {
 	}
 	
 	@Override public boolean depot( float montant) {
-		afficheTexteErreur( "Depot impossible");
-		return false;
+		throw new java.lang.UnsupportedOperationException("on ne peut pas faire un depot sur un compte placement");
+		//afficheTexteErreur( "Depot impossible");
+		//return false;
 	}
 	
 }

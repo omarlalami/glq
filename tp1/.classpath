@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="exo2_prof"/>
 	<classpathentry kind="src" path="exo2"/>
+	<classpathentry kind="src" path="exo3"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

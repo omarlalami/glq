@@ -49,6 +49,12 @@ public class CompteAnonyme {
 		}
 
 		public boolean depot( float montant )  {
+			if (montant<0)
+				throw new java.lang.IllegalArgumentException("le montant du depot doit etre positif !");
+			
+			if (montant == 2587)
+				throw new java.lang.RuntimeException("erreur de test pour question 3");
+			
 			boolean depotEffectue = false;
 			if ( montant <= 0)  afficheTexteErreur("Montant invalide");
 			else { solde += montant ; depotEffectue = true; }
@@ -56,11 +62,22 @@ public class CompteAnonyme {
 		}
 
 		public void retrait( float montant ) {
+			if (montant<0)
+				throw new java.lang.IllegalArgumentException("le montant du retrait doit etre positif !");
+			
 			if ( montant <= 0) afficheTexteErreur("Montant invalide");
 			else solde -= montant ;
 		}
 		
+		
+		// je n'ai pas compris pourquoi rajouter throws Exception a la methode virement et pas a depot ...
+		// si c'est une exception de type Exception mais si c'est une exception de IllegalArgumentException ca passe
 		public static void virement( CompteAnonyme source, CompteAnonyme dest, float montant) {
+			if (montant<0)
+				throw new java.lang.IllegalArgumentException("le montant du virement doit etre positif !");
+			if (montant > source.getSolde())
+				throw new ExceptionSoldeInsuffisant("le compte source n'a pas le montant suffisant");
+			
 			if ( montant <= 0) source.afficheTexteErreur("Montant invalide");
 			else if ( montant > source.getSolde() ) source.afficheTexteErreur("Solde insuffisant");
 			else if (dest.depot( montant)) source.retrait( montant);
