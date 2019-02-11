@@ -1,8 +1,12 @@
 package pile;
 
-/** Une pile bornée
- * @author L. Torres
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+
+/** Une pile bornée.
+ * @author L. Torres.
  */
+
 public class PileBornee {
 
     /** Implementation de la pile par un tableau. */
@@ -15,8 +19,10 @@ public class PileBornee {
      * @param max nombre maximum d'éléments dans la pile.
      */
     public PileBornee(int max) {
+    	assert(max>0);
     	tableau = new Object[max];
     	nombre = 0;
+    	assert (tableau.length==max);
     }
 
     /** Cette pile est-elle vide ?
@@ -37,14 +43,18 @@ public class PileBornee {
      * @param o l'élément à empiler. 
      */
     public void empile(Object o) {
+    	assertNotNull(o);	
+    	assert(tableau.length<=nombre);
     	tableau[nombre] = o;
     	nombre++;
+    	assert(tableau.length<=nombre);
     }
 
     /** Renvoie l'élément au sommet de la pile.
      * @return l'élément au sommet de la pile.
      */
     public Object sommet() {
+    	assertNotEquals(nombre,0);
         return tableau[nombre-1];
     }
 
@@ -52,9 +62,11 @@ public class PileBornee {
      * @return l'élément supprimé.
      */
     public Object depile() {
+    	assert(nombre>0);
        	Object o = tableau[nombre-1];
        	tableau[nombre-1] = null; // GC !
     	nombre--;
+    	assert(nombre>=0);
     	return o;
     }
 
@@ -65,7 +77,8 @@ public class PileBornee {
         return nombre;
     }
     
-    @Override public String toString() {
+    // override signifie on hérite, si on ne dit pas de quoi on hérite, c'est Object par default
+    @Override public String toString() { // par default toSTring hérite de object // quand on ne met pas de quoi sa hérite par défault ca hérite Object
     	String res="";
     	for (int i = 0; i < nombre; i++)
     		res += "[" + this.tableau[i] + "]";
