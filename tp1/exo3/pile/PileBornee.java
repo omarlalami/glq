@@ -19,7 +19,8 @@ public class PileBornee {
      * @param max nombre maximum d'éléments dans la pile.
      */
     public PileBornee(int max) {
-    	assert(max>0);
+    	//assert(max>0):"taille doit etre positif";
+    	if (max <0) throw new IllegalArgumentException();
     	tableau = new Object[max];
     	nombre = 0;
     	assert (tableau.length==max);
@@ -43,18 +44,18 @@ public class PileBornee {
      * @param o l'élément à empiler. 
      */
     public void empile(Object o) {
-    	assertNotNull(o);	
-    	assert(tableau.length<=nombre);
+    	assertNotNull("on ne peut pas empiler un object null", o);
+    	assert(nombre<tableau.length):"la taille max est atteinte on ne peut plus empiler";
     	tableau[nombre] = o;
     	nombre++;
-    	assert(tableau.length<=nombre);
+    	assert(nombre<tableau.length):"la taille max est atteinte on ne pourra plus empiler";
     }
 
     /** Renvoie l'élément au sommet de la pile.
      * @return l'élément au sommet de la pile.
      */
     public Object sommet() {
-    	assertNotEquals(nombre,0);
+    	assertNotEquals("il n'existe pas de sommet !",nombre,0);
         return tableau[nombre-1];
     }
 
@@ -62,11 +63,11 @@ public class PileBornee {
      * @return l'élément supprimé.
      */
     public Object depile() {
-    	assert(nombre>0);
+    	assert(nombre>0):"on ne peut pas depiler, car la pile est vide";
        	Object o = tableau[nombre-1];
        	tableau[nombre-1] = null; // GC !
     	nombre--;
-    	assert(nombre>=0);
+    	assert(nombre>0):"on ne pourra plus pas depiler, car la pile est vide";
     	return o;
     }
 
