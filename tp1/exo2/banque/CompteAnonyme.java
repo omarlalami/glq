@@ -72,7 +72,7 @@ public class CompteAnonyme {
 		
 		// je n'ai pas compris pourquoi rajouter throws Exception a la methode virement et pas a depot ...
 		// si c'est une exception de type Exception mais si c'est une exception de IllegalArgumentException ca passe
-		public static void virement( CompteAnonyme source, CompteAnonyme dest, float montant) {
+		public static void virement( CompteAnonyme source, CompteAnonyme dest, float montant) throws ExceptionSoldeInsuffisant {
 			if (montant<0)
 				throw new java.lang.IllegalArgumentException("le montant du virement doit etre positif !");
 			if (montant > source.getSolde())

@@ -35,18 +35,30 @@ public class Test {
 		catch (IllegalArgumentException e) { System.err.println(e.getMessage()); }
 		
 		try { CompteAnonyme.virement(c1, c4, 5200);} 
-		catch (IllegalArgumentException e) { System.err.println(e.getMessage()); }
+		catch (ExceptionSoldeInsuffisant e) { System.err.println(e.getMessage()); }
 		
-		try { CompteAnonyme.virement(c1, c4, -20);} 
-		catch (IllegalArgumentException e) { System.err.println(e.getMessage()); } 
+		//try { CompteAnonyme.virement(c1, c4, -20);} 
+		//catch (ExceptionSoldeInsuffisant e) { System.err.println(e.getMessage()); } 
+		
+		
+		// question 3 explication de la prof :
+		// depot c'est RuntimeException ou sous classe donc pas obligé de mettre throws
+		// en général c'est a eviter car les personnes qui vont la réutilisé pour coder ne seront pas au courant
+		// de préference on utilise des sous classes de Exception comme ca on est averti de l'exception
 		
 		// question 3 :
 		// je sais pas comment faire ce qu'elle demande, j'ai ajouter une java.lang.RuntimeException pour depot 
 		
-		c1.depot(2587);
+		//c1.depot(2587);
+		//CompteAnonyme.virement(c1, c4, -20);
 		
-		try { c1.depot(2587);} 
-		catch(java.lang.IllegalArgumentException e) {System.err.println(e.getMessage());}
+		try { c1.depot(-20);} 
+		catch(java.lang.RuntimeException e) {System.err.println(e.getMessage());}
+		// pour cette exemple c'est pas bien d'attraper qu'un seul exception général
+		// il faut toujours attrapé des exception précises comme ca on évite d'attraper une exception non traité ( division par 0 ) par exemple
+		
+		
+		
 		// dans catch on est obligé de mettre IllegalArgumentException sinon on a une erreur
 		// pour RuntimeException sa nous affiche pas derreur
 		
@@ -55,14 +67,19 @@ public class Test {
 		// elles doivent etre controlé ... par définnition
 		
 		//controlés :
-		//java.lang.IllegalArgumentException
-		//ExceptionSoldeInsuffisant hérite de IllegalArgumentException
+		//ExceptionSoldeInsuffisant hérite de exception
 		//java.lang.UnsupportedOperationException
 		
 		// non controlé :
+		//java.lang.IllegalArgumentException hérite de java.lang.RuntimeException
 		//java.lang.RuntimeException
 		//java.lang.Error
 		
+		// q4 prof :
+		// dans le cas ou le depot peut etre rentré par lutilisateur alors on devrait attrapé l'erreur si c'est négatif
+		// on la mettrait comme java.lang.UnsupportedOperationException car c'est une erreur qui peut avoir lieu
+		// dans notre cas on suppose que l'erreur n'arrivera pas donc on peut la laissez comme ca
+		// c'est une erreur qui na pas lieu d'arrivé par définition
 		
 		
 	}
