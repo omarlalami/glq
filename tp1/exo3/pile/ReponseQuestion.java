@@ -1,5 +1,7 @@
 package pile;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class ReponseQuestion {
 
 	
@@ -26,7 +28,7 @@ public class ReponseQuestion {
 	
 	// question 4 : voir pilebornee.java
 	// ca depend des tests, mais concernant celle ou ya des assertions il ne pourra pas
-	// par exemple dépiler si la pile est vide ...
+	// par exemple dï¿½piler si la pile est vide ...
 
 	public static void main(String[] args) {
 
@@ -37,7 +39,7 @@ public class ReponseQuestion {
 		
 		
 		try {new PileBornee(-2); throw new Error("bug"); } catch( IllegalArgumentException e ) {}
-		// les asserts on les mets quand on est sure qu'un cas ne va pas arrivé !
+		// les asserts on les mets quand on est sure qu'un cas ne va pas arrivï¿½ !
 		// si on est sur que pilebornnee ne va jamais recevoir un nombre negatif on met assert
 		// sinon on met if max < 0 throw new exception et ici on test dans throw !
 		// c'est deux principe un peu different
@@ -83,6 +85,13 @@ public class ReponseQuestion {
 		// question 6 : on doit la finir
 		
 		//voir les photo pour savoir comment on fait
+		// la classe a generer : PileBorneeTest
+		// bouton droit sur PileBornee->new JUnit test case
+		// on coche les bouton setUp setupbeforeclass teardown teardownafterclass generatecomment
+		// next -> on choisi les fonctions a tester -> finish-> on a notre squellette
+		// reste qu'a completer les fonction
+		
+		// on a un taux de couverture qui touche toutes les methodes
 		
 		
 		
@@ -92,10 +101,13 @@ public class ReponseQuestion {
 		
 		
 		// question 8 :
+		// j'ai pas compris
 		
 		
-		
-		
+		// prof a demander :
+		// remarque : pourquoi etre obligÃ© denlever static dans PieBorneeTest pour BeforeALL
+		// pourquoi dans testDepile() assertThrows ne fonctionne pas comme dans testPileBornee()
+
 		
 	}
 

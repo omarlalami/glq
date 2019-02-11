@@ -48,7 +48,6 @@ public class PileBornee {
     	assert(nombre<tableau.length):"la taille max est atteinte on ne peut plus empiler";
     	tableau[nombre] = o;
     	nombre++;
-    	assert(nombre<tableau.length):"la taille max est atteinte on ne pourra plus empiler";
     }
 
     /** Renvoie l'élément au sommet de la pile.
@@ -63,11 +62,12 @@ public class PileBornee {
      * @return l'élément supprimé.
      */
     public Object depile() {
-    	assert(nombre>0):"on ne peut pas depiler, car la pile est vide";
+    	if (nombre <0)
+    		throw new IllegalArgumentException();
+    	//assert(nombre>0):"on ne peut pas depiler, car la pile est vide";
        	Object o = tableau[nombre-1];
        	tableau[nombre-1] = null; // GC !
     	nombre--;
-    	assert(nombre>0):"on ne pourra plus pas depiler, car la pile est vide";
     	return o;
     }
 
