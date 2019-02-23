@@ -43,6 +43,9 @@ class FibonnaciTest {
 				e.printStackTrace();
 			}
 		
+		
+		// le but de assertThrows c'est de confirmer qu'une exception est lever
+		// par exemple ici fibonnaci de 46 provoque une exception et le assertThrows l'attrape et la confirme !
 		assertThrows(Exception.class, () -> Fibonnaci.fibonacci(46,0,1),"Ici une exception est levé : le assert Throws l'attrape donc et ce message n'aparrait pas" );
 		assertThrows(Exception.class, () -> Fibonnaci.fibonacci(4,0,1),"Ici une exception n'est pas levé : le assert Throws n'attrape rien donc et ce message aparrait" );
 		
