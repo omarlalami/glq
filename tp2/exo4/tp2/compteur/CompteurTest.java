@@ -8,16 +8,27 @@ import org.junit.jupiter.api.Test;
 class CompteurTest {
 
 	//question 1 :
-	// on ne peut pas tester car on ne sais pas a quel moment TestNbInstance sera appeler
-	// si elle est appeler en premier on aura une valeur de 3
-	// si c'est la derniere a etre appelé , on aura une valeur de 9
-	// car a chaque fois qu'on appel un test BeforeEach est appelé avant donc creation d'instance
+
+	// a chaque fois qu'on appel un test, BeforeEach est appelé avant donc creation d'instance du coup on ne sais pas excatement qu'elle est la valeur
+	// la solution c'est de mettre a 0 la variable comme ca nos tests seront independant
 	
+
+	// question 2 :
 	
 	Compteur c1,c2,c3;
 	
 	@BeforeEach
 	void setUp() throws Exception {
+		java.lang.reflect.Field nbInstance;
+
+		try {
+			nbInstance = Compteur.class.getDeclaredField("nombreDInstances");
+			//nbInstance.setAccessible(true);
+			nbInstance.set(null, 0);
+		} catch (NoSuchFieldException | SecurityException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
+
 		c1 = new Compteur();
 		c2 = new Compteur(5);
 		c3 = new Compteur(10,2);
@@ -41,24 +52,7 @@ class CompteurTest {
 	
 	@Test
 	void testGetNbInstance() {
-		System.out.println("nombre d'instance : " + Compteur.getNbInstance());
+		assertEquals(3, Compteur.getNbInstance());
 	}
 	
-	// question 2 :
-	
-	
-	@Test
-	void testQ2 () {
-		java.lang.reflect.Field nbInstance;
-		try {
-			nbInstance = Compteur.class.getDeclaredField("nombreDInstances");
-			nbInstance.setAccessible(true);
-			nbInstance.set(null, 10);
-		} catch (NoSuchFieldException | SecurityException | IllegalAccessException e) {
-			e.printStackTrace();
-		}
-		System.out.println("reflection : ");
-		testGetNbInstance();
-	}
-
 }

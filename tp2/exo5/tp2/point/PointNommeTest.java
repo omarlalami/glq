@@ -20,9 +20,7 @@ class PointNommeTest extends AbstraitePointTest{
 
 	@BeforeEach
 	void setUp() throws Exception {
-		p1 = new PointNomme("mon point 1");
-		p2 = new PointNomme(1,"mon point 2");
-		p3 = new PointNomme(2,3,"mon point 3");
+		System.out.println("coucou");
 	}
 
 	@Test
@@ -34,5 +32,22 @@ class PointNommeTest extends AbstraitePointTest{
 	void testAfficher() {
 		fail("Not yet implemented");
 	}
+	
+	@Override
+	protected Point creer() {
+		return new PointNomme("A");
+	}
+
+	@Override
+	protected Point creer(int i) {
+		return new PointNomme(i,"B");
+	}
+
+	@Override
+	protected Point creer(int i, int j) {
+		// TODO Auto-generated method stub
+		return new PointNomme(i,j,"C");
+	}
+
 
 }

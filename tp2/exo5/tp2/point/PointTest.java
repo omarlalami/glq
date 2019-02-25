@@ -7,12 +7,6 @@ import org.junit.jupiter.api.Test;
 
 class PointTest extends AbstraitePointTest{
 
-	@BeforeEach
-	void setUp() throws Exception {
-		p1 = new Point();
-		p2 = new Point(1);
-		p3 = new Point(2,3);
-	}
 	
 	@Test
 	void testToString() {
@@ -22,6 +16,22 @@ class PointTest extends AbstraitePointTest{
 	@Test
 	void testAfficher() {
 		fail("Not yet implemented");
+	}
+
+	@Override
+	protected Point creer() {
+		return new Point();
+	}
+
+	@Override
+	protected Point creer(int i) {
+		return new Point(i);
+	}
+
+	@Override
+	protected Point creer(int i, int j) {
+		// TODO Auto-generated method stub
+		return new Point(i,j);
 	}
 
 }

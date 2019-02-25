@@ -3,12 +3,24 @@ package tp2.point;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 abstract class AbstraitePointTest {
 
 	Point p1,p2,p3;
+	protected abstract Point creer();
+	protected abstract Point creer(int i);
+	protected abstract Point creer(int i , int j);
 
+	@BeforeEach
+	void setUp() throws Exception {
+		p1 =creer();
+		p2 = creer(1);
+		p3 = creer(2,3);
+	}
+
+	
 	@Test
 	void testHashCode() {
 		assertNotEquals(p1.hashCode(),p2.hashCode());
