@@ -26,10 +26,12 @@ class BibliothequeTest {
 	}
 	
 	private static List<Object[]> fournirDonnees() { 
+		return Arrays.asList(new Object[][] { {"xxx", new Object [] {"a0","a1","s0"} }, {"xxx", new Object [] {"a1","a1"} }} );
 	}
 	
 	@ParameterizedTest @MethodSource("fournirDonnees")
 	void testAjouteEtEnleve(String resultat, String[] ordres) {
+		
 	}
 
 }
