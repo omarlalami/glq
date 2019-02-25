@@ -109,6 +109,8 @@ public class ReponseQuestion {
 		// pourquoi dans testDepile() assertThrows ne fonctionne pas comme dans testPileBornee()
 
 		
+		// c'est comme la 7 mais faut utiliser : export javadoc et mettre la doclet madocclass
+		
 	}
 
 
