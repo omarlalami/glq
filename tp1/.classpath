@@ -6,6 +6,6 @@
 	<classpathentry kind="src" path="exo2"/>
 	<classpathentry kind="src" path="exo3"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_144/lib/tools.jar"/>
+	<classpathentry kind="lib" path="/home/pc/mon_workspace_eclipse/glq/tp1/exo3/tools.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

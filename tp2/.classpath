@@ -8,7 +8,8 @@
 	<classpathentry kind="src" path="exo4"/>
 	<classpathentry kind="src" path="exo5"/>
 	<classpathentry kind="src" path="exo6"/>
+	<classpathentry kind="src" path="exo7"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Users/l16024220/Downloads/tableau.jar"/>
+	<classpathentry kind="lib" path="/home/pc/mon_workspace_eclipse/glq/tp2/exo3/tableau.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
