@@ -11,6 +11,7 @@ import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic.Kind;
 
+import exo1.AFaire;
 
 @SupportedAnnotationTypes(value = { "*" })
 @SupportedSourceVersion(SourceVersion.RELEASE_6)
@@ -27,8 +28,8 @@ public class ProcesseurAFaire extends AbstractProcessor {
 								+ element.getSimpleName());
 						AFaire a = element.getAnnotation(AFaire.class);
 						if (a != null) {
-							messager.printMessage(Kind.NOTE, "    "+ a.value() + " ["+a.niveau() 
-									+ "]  affecte a "+a.affecteeA() + " le " + a.date());
+							messager.printMessage(Kind.NOTE, "    "+ a.descrption_tache() + " ["+a.niveau() 
+									+ "]  affecte a "+a.nom_developpeur() + " le " + a.d());
 						}
 					}
 				}

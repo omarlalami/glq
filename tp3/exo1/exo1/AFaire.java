@@ -9,7 +9,7 @@ import java.lang.annotation.RetentionPolicy;
 
 // si on ne met pas target on peut laccrocher partout
 
-@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.RUNTIME)
 
 public @interface AFaire {
 	

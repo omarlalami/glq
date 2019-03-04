@@ -18,7 +18,7 @@ public class Question_2_a {
 		// avec declared on accéede a ceux hérité aussi
 
 		Field[] tableauDeChamps = c.getClass().getDeclaredFields();
-		Method[] tableauDeMethodes = c.getClass().getMethods();
+		Method[] tableauDeMethodes = c.getClass().getDeclaredMethods();
 		//System.out.println(tableauDeChamps);
 		
 		for(Field f : tableauDeChamps) {
