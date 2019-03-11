@@ -12,10 +12,10 @@ public class Question_2_a {
 		
 		AFaire annotation = c.getClass().getAnnotation(AFaire.class);
 		
-		//if(annotation!=null)	// si c n'est pas annoté de l'annotation AFaire on quitte
+		//if(annotation!=null)	// si c n'est pas annote de l'annotation AFaire on quitte
 		//	System.exit(-1);
 		
-		// avec declared on accéede a ceux hérité aussi
+		// avec declared on accede a ceux herite aussi
 
 		Field[] tableauDeChamps = c.getClass().getDeclaredFields();
 		Method[] tableauDeMethodes = c.getClass().getDeclaredMethods();
