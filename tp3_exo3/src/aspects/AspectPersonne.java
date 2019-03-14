@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
 import personne.Personne;
-
+/*
 @Aspect
 public class AspectPersonne { 
 	
@@ -43,3 +43,4 @@ public class AspectPersonne {
 
 
 }
+*/
