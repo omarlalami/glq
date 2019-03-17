@@ -4,6 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/mockito-all-1.10.19.jar"/>
-	<classpathentry kind="lib" path="/home/pc/Downloads/commons-io-2.6/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="/home/pc/mon_workspace_eclipse/glq/commons-io-2.6-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
